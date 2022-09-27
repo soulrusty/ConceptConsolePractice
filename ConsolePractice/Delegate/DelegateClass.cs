@@ -1,13 +1,5 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.Intrinsics.X86;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.Security.Cryptography.X509Certificates;
+using static ConsolePractice.Delegate.DelegateClass;
 
 namespace ConsolePractice.Delegate
 {
@@ -34,9 +26,25 @@ namespace ConsolePractice.Delegate
     {
         public delegate int Del(int a, int b);
 
-        public static int DelegateMethod(int a, int b)
+        public int DelegateMethod(int a, int b)
         {
             return a + b;
         }
+    }
+
+    public static class CallDelegateMethodExample
+    {
+       public static void CallDelegate()
+        {
+            //Delegate Practice.
+            DelegateClass delegateClass = new DelegateClass();
+
+            // Instantiate the delegate.
+            Del handler = delegateClass.DelegateMethod;
+
+            // Call the delegate.
+            handler(6, 9);
+        }
+
     }
 }

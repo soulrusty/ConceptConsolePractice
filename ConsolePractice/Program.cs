@@ -1,5 +1,6 @@
 ﻿using ConsolePractice;
 using ConsolePractice.Delegate;
+using ConsolePractice.WordProblems;
 using static ConsolePractice.Delegate.DelegateClass;
 
 internal class Program
@@ -17,6 +18,7 @@ internal class Program
         //gClass.CallMethod();
         //hClass.CallMethod();
 
-        
+        ClassPract.PrintConsole(StringProblems.ReverseEachWordOfTheSentence("My name is mukesh").ToString());
+        StringProblems.GetPossibleSubstring("My name is mukesh");
     }    
 }

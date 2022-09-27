@@ -49,5 +49,116 @@ namespace ConsolePractice.WordProblems
 
             return stringBuilder.ToString();
         }
+
+        public static string GetDuplicateString(string inputString)
+        {
+            StringBuilder duplicateCharacter = new();
+            StringBuilder allDistinctCharacter = new();
+
+            foreach (char c in inputString)
+            {
+                if(allDistinctCharacter.ToString().IndexOf(c) == -1)
+                {
+                    allDistinctCharacter.Append(c);
+                }
+                else
+                {
+                    duplicateCharacter.Append(c);
+                }
+            }
+            return duplicateCharacter.ToString();
+        }
+
+        public static string GetValuesInReverse(string inputString)
+        {
+            //Approach 1
+            string testValue = new string(inputString.Reverse().ToArray());
+
+            //Approach 2
+            StringBuilder sb = new();
+            for(int i = inputString.Length - 1;i > -1;i--)
+            {
+                sb.Append(inputString[i]);
+            }
+            return sb.ToString();
+        }
+
+        public static bool CheckPalindrome(string inputString)
+        {
+            if(inputString == GetValuesInReverse(inputString))
+                return true;
+            return false;
+        }
+
+        public static string ReverseSentence(string inputString)
+        {
+            var intermediateArray = inputString.Split(" ");
+            StringBuilder sb = new();
+            for(int i =intermediateArray.Length-1;i>-1;i--)
+            {
+                sb.Append(intermediateArray[i]);
+                if(i != 0)
+                {
+                    sb.Append(' ');
+                }
+            }
+            return sb.ToString();
+        }
+
+        public static string ReverseEachWordOfTheSentence(string inputString)
+        {
+            var splitSentence = inputString.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+            StringBuilder sb = new();
+            foreach(string word in splitSentence)
+            {
+                sb.Append(GetValuesInReverse(word));
+                sb.Append(' ');
+            }
+            return sb.ToString();
+        }
+
+        public static string GetTheWordCountInASentence(string inputString)
+        {
+            Dictionary<char, int> dictionary = new();
+            foreach (char c in inputString)
+            {
+                if (char.IsWhiteSpace(c))
+                    continue;
+                if (dictionary.ContainsKey(c))
+                {
+                    dictionary[c]++;
+                }
+                else
+                {
+                    dictionary.Add(c, 1);
+                }
+            }
+
+            StringBuilder sb = new();
+            foreach(var v in dictionary)
+            {
+                sb.Append(v.Key +""+ v.Value);
+            }
+
+            return sb.ToString();
+            
+        }
+
+        // Get the possible substring in a string  
+        public static void GetPossibleSubstring(string inputString)
+        {
+            if (!string.IsNullOrEmpty(inputString))
+            {
+                for (int i = 1; i < inputString.Length; i++)
+                {
+                    for (int j = 0; j <= inputString.Length - i; j++)
+                    {
+                        Console.WriteLine(inputString.Substring(j, i));
+                        var getAllThreeCharacterSubstring = inputString.Substring(j, 3);
+                    }
+                }                
+            }
+        }
     }
 }

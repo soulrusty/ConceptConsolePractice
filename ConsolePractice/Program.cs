@@ -18,7 +18,10 @@ internal class Program
         //gClass.CallMethod();
         //hClass.CallMethod();
 
-        ClassPract.PrintConsole(StringProblems.ReverseEachWordOfTheSentence("My name is mukesh").ToString());
-        StringProblems.GetPossibleSubstring("My name is mukesh");
+        //ClassPract.PrintConsole(StringProblems.ReverseEachWordOfTheSentence("My name is mukesh").ToString());
+        //StringProblems.GetPossibleSubstring("My name is mukesh");
+        //StringProblems.BinarySearchOnstring();
+        int[] array = new int[] { 5,5,5,4, 4,4,5 };
+        ArrayProblems.FindDuplicateIntegersInArrayAndReturnInAscendingOrder(array.Length,array);
     }    
 }

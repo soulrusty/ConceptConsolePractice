@@ -155,10 +155,18 @@ namespace ConsolePractice.WordProblems
                     for (int j = 0; j <= inputString.Length - i; j++)
                     {
                         Console.WriteLine(inputString.Substring(j, i));
-                        var getAllThreeCharacterSubstring = inputString.Substring(j, 3);
+                        //var getAllThreeCharacterSubstring = inputString.Substring(j, 3);
                     }
                 }                
             }
+        }
+
+        public static void BinarySearchOnstring()
+        {
+            string[] arr = new string[]{ "Hi", "Guest", "I", "Mukesh", "Am" };
+            Array.Sort(arr); // Am, Guest, Hi, I, Mukesh
+            var index = Array.BinarySearch<string>(arr, "Hi");
+            Console.WriteLine("The position of 'Hi' in array is " + index);
         }
     }
 }

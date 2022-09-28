@@ -21,7 +21,7 @@ internal class Program
         //ClassPract.PrintConsole(StringProblems.ReverseEachWordOfTheSentence("My name is mukesh").ToString());
         //StringProblems.GetPossibleSubstring("My name is mukesh");
         //StringProblems.BinarySearchOnstring();
-        int[] array = new int[] { 5,5,5,4, 4,4,5 };
+        int[] array = new int[] {1,1,4,4,2,3,4,1,2,3,2,1,2,3,3,2,1,1,1,3,3,1};
         ArrayProblems.FindDuplicateIntegersInArrayAndReturnInAscendingOrder(array.Length,array);
     }    
 }

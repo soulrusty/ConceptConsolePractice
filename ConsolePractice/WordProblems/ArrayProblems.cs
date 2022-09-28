@@ -37,10 +37,22 @@ namespace ConsolePractice.WordProblems
             List<int> list = new List<int>();
             foreach(var v in result)
             {
-                list.Add(v.Key);
+                if (v.Value > 1)
+                {
+                    list.Add(v.Key);
+                }
             }
-            list.Sort();
-            return list.ToArray();
+            
+            if (list.Count > 0)
+            {
+                list.Sort();
+                return list.ToArray();
+            }
+            else
+            {
+                list.Add (-1);
+                return list.ToArray();
+            }            
         }
     }
 }

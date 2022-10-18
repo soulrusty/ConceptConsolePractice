@@ -18,10 +18,13 @@ internal class Program
         //gClass.CallMethod();
         //hClass.CallMethod();
 
-        //ClassPract.PrintConsole(StringProblems.ReverseEachWordOfTheSentence("My name is mukesh").ToString());
-        //StringProblems.GetPossibleSubstring("My name is mukesh");
-        //StringProblems.BinarySearchOnstring();
-        int[] array = new int[] {1,1,4,4,2,3,4,1,2,3,2,1,2,3,3,2,1,1,1,3,3,1};
-        ArrayProblems.FindDuplicateIntegersInArrayAndReturnInAscendingOrder(array.Length,array);
-    }    
+        /*-------Create an INT Array and Also Assign Empty Array--------*/
+
+        int[] array = new int[] { 3,78,78,8,8,99,0 };
+        array = Array.Empty<int>();
+
+        /*-------Create an INT Array and Also Assign Empty Array--------*/
+
+
+    }
 }

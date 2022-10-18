@@ -10,12 +10,17 @@ namespace ConsolePractice.WordProblems
     {
         public static int CreateAddValueInArray()
         {
-            int[] arrayList = new int[] {1,2,3,4,5,6,7,8,9,10};
+            int[] arrayList = new int[] {1,2,3,4,5,6,7,8,9,10,11,12};
             int sum = 0;
-            for(int i = arrayList.Length-1; i>-1 ;i-- )
-            {
-                Console.WriteLine(arrayList[i]);
-                sum = sum + arrayList[i];
+            //for(int i = arrayList.Length-1; i>-1 ;i-- )
+            //{
+            //    Console.WriteLine(arrayList[i]);
+            //    sum = sum + arrayList[i];
+            //}
+
+            foreach(int val in arrayList)
+            {                
+                sum = sum + val;
             }
             return sum;
         }
@@ -34,25 +39,34 @@ namespace ConsolePractice.WordProblems
                     result.Add(i, 1);
                 }
             }
-            List<int> list = new List<int>();
-            foreach(var v in result)
+
+            //Method 1
+            //List<int> list = new List<int>();
+            //foreach(var v in result)
+            //{
+            //    if (v.Value > 1)
+            //    {
+            //        list.Add(v.Key);
+            //    }
+            //}
+
+            //if (list.Count > 0)
+            //{
+            //    list.Sort();
+            //    return list.ToArray();
+            //}          
+
+            //Method 2
+            //short using Linq
+
+            if (result.Count > 0)
             {
-                if (v.Value > 1)
-                {
-                    list.Add(v.Key);
-                }
-            }
-            
-            if (list.Count > 0)
-            {
-                list.Sort();
-                return list.ToArray();
+                return result.Where(x => (x.Value > 1)).OrderBy(x => x.Key).Select(x => x.Key).ToArray();
             }
             else
             {
-                list.Add (-1);
-                return list.ToArray();
-            }            
+                return new int[] {-1 };
+            }
         }
     }
 }

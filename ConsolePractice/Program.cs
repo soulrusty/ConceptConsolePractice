@@ -7,8 +7,6 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        ClassPract.PrintConsole("Hello World");
-
         //Inhertance Practice.
         //FClass fClass = new FClass();
         //FClass gClass = new GClass();

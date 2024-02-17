@@ -24,7 +24,7 @@ namespace ConsolePractice.Inhertance
 
     internal class HClass : FClass
     {
-        public void CallMethod()
+        public new void CallMethod()
         {
             Console.WriteLine("This is a call from HClass");
         }

@@ -6,6 +6,18 @@ using System.Threading.Tasks;
 
 namespace ConsolePractice.Interface
 {
+    public interface InterfaceA
+    {
+        void PrintA();
+    }
+    public interface InterfaceB
+    {
+        void PrintB();
+    }
+    public interface InterfaceC
+    {
+        void PrintC();
+    }
     public class MultipleInheritanceClass : InterfaceA, InterfaceB, InterfaceC
     {
         public void PrintA()
